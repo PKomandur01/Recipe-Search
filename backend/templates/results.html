@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Results</title>
+    <!-- Add any necessary CSS links here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Recipe Results</h1>
+    {% for recipe in recipes %}
+    <div class="recipe">
+        <h2>{{ recipe.title }}</h2>
+        <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        <p>Servings: {{ recipe.servings }}</p>
+        <p>Ready in Minutes: {{ recipe.readyInMinutes }}</p>
+        <p>Source URL: <a href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.sourceUrl }}</a></p>
+        <h3>Instructions:</h3>
+        <p>{{ recipe.instructions }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

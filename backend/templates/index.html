@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .big-title {
+            font-size: 50px; /* Makes the text bigger */
+            font-weight: bold; /* Makes the text bold */
+            text-align: center; /* Centers the text */
+            margin: 20px; /* Adds space around the text */
+            width: 100%; /* Makes the width of the title 100% of its container */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="big-title">Recipe Search</h1>
+    <!-- Add any necessary CSS links here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   
+    <form action="/search" method="post">
+        <label for="ingredients">Enter 3 ingredients separated by commas:</label><br>
+        <input type="text" id="ingredients" name="ingredients" required><br><br>
+        <button type="submit">Search</button>
+    </form>
+    <!-- Add any necessary JavaScript links here -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
